@@ -11,3 +11,6 @@ Watch the ball move in the x and y directions and bounce back.
 
 ## Roadmap
 Hope to add more variety in the balls bouncing in different directions, change random colors, and add other upgrades as more knowledge is gained.
+
+## License information
+MITxPro
