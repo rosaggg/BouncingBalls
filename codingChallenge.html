@@ -1,0 +1,94 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:green"></div>
+
+<div id="ball2" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:200px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:magenta"></div>
+
+
+<div id="ball3" style="
+z-index:5;
+position:absolute;
+left:0px;
+top:300px;
+width:300px;
+height:300px;
+border-radius:50%;
+background:purple"></div>
+
+<script>
+    var positionX = 0;
+    var positionY = 0;
+    var positionX2 = 300;
+    var positionY2 = 100;
+    var positionX3 = 200;
+    var positionY3 = 400;
+    var velocity = 100;
+    var velocity2 = 500;
+    var velocity3 = 250;
+    var reverse = false;
+    var ball = document.getElementById("ball");
+    var ball1 = document.getElementById("ball1");
+    var ball2 = document.getElementById("ball2");
+    
+function moveBall(){
+    var xMin = 0;
+    var xMax = 300;
+    var yMin = 0;
+    var yMax = 300;
+    if (reverse) {
+        positionX = positionX - velocity;
+        positionY = positionY - velocity;
+        positionX2 = positionX2 - velocity2;
+        positionY2 = positionY2 - velocity2;
+        positionX3 = positionX3 - velocity3;
+        positionY3 = positionY3 - velocity3;
+        ball.style.left = positionX + "px";
+        ball.style.top = positionY + "px";
+        ball2.style.left = positionX2 + "px";
+        ball2.style.top = positionY2 + "px";
+        ball3.style.left = positionX3 + "px";
+        ball3.style.top = positionY3 + "px";
+    }
+    else{
+        positionX = positionX + velocity;
+        positionY = positionY + velocity;
+        positionX2 = positionX2 + velocity2;
+        positionY2 = positionY2 + velocity2;
+        positionX3 = positionX3 + velocity3;
+        positionY3 = positionY3+ velocity3;
+        ball.style.left = positionX + "px";
+        ball.style.top = positionY + "px";
+        ball2.style.left = positionX2 + "px";
+        ball2.style.top = positionY2 + "px";
+        ball3.style.left = positionX3 + "px";
+        ball3.style.top = positionY3 + "px";
+    }
+    if(
+        positionX > xMax ||
+        positionX === xMin ||
+        positionY > yMax ||
+        positionY === yMin
+    ){
+        reverse = !reverse;
+    }
+    }
+   setInterval(moveBall, 200);
+
+   
+
+</script>
+
